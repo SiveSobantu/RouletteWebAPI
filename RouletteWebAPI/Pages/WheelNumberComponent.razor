@@ -1,0 +1,19 @@
+﻿@using RouletteWebAPI.Models.Base
+
+@if(WheelNumber != null)
+{ 
+<li class="@WheelNumber.Colour.ToString().ToLower()">
+    <span class="number">@WheelNumber.Number</span>
+
+    @if (WheelNumber.selected)
+    {
+        <span class="ball-container"><span class="ball"></span></span>
+    }
+</li>
+}
+
+@code {
+    [Parameter]
+    public WheelNumber WheelNumber { get; set; }
+
+}
